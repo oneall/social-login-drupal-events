@@ -17,8 +17,8 @@ Social Login is maintained by [OneAll](https://www.oneall.com/). OneAll, a techn
 web-delivered tools and services for establishing and optimizing a site's connection with social networks.
 
 ## License
-The **GNU General Public License** (GPL) is available at  
-https://www.gnu.org/licenses/old-licenses/gpl-2.0.html.
+The **GNU General Public License** (GPL) is available here:  
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 
 **Fork us on Github!**
