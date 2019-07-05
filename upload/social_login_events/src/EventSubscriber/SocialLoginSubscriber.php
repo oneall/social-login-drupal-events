@@ -23,10 +23,13 @@ class SocialLoginSubscriber implements EventSubscriberInterface
         $events[SocialLoginUserCreatedEvent::EVENT_NAME] = [
             'onUserCreated'
         ];
+        $events[SocialLoginUserLinkedEvent::EVENT_NAME] = [
+            'onUserLinked'
+        ];
         return $events;
     }
 
-    // Triggered whenever a new user is being created.
+    // Triggered whenever a user registers an account using Social Login.
     public function onUserCreated(SocialLoginUserCreatedEvent $event)
     {
         // User account.
@@ -68,7 +71,7 @@ class SocialLoginSubscriber implements EventSubscriberInterface
         }
     }
 
-    // Triggered whenever a user logs in.
+    // Triggered whenever a user logs in with Social Login.
     public function onUserLogin(SocialLoginUserLoginEvent $event)
     {
         // User account.
@@ -80,7 +83,31 @@ class SocialLoginSubscriber implements EventSubscriberInterface
         // Check identity.
         if (is_array($data) && isset($data['user']['identity']))
         {
+            // Extract identity.
+            $identity = $data['user']['identity'];
+
             // CUSTOM PROCESSING
+            // ...
+        }
+    }
+
+    // Triggered whenever Social Login links a social network account to a Drupal account.
+    public function onUserLinked(SocialLoginUserLinkedEvent $event)
+    {
+        // User account.
+        $account = $event->get_account();
+
+        // Social Network Profile Data.
+        $data = $event->get_social_network_profile_data();
+
+        // Check identity.
+        if (is_array($data) && isset($data['user']['identity']))
+        {
+            // Extract identity.
+            $identity = $data['user']['identity'];
+
+            // CUSTOM PROCESSING
+            // ...
         }
     }
 
