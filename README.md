@@ -3,7 +3,7 @@ EventSubscriber example module for OneAll Social Login.
 
 In this example module, the custom fields `first_name`, `last_name` and `full_name` 
 are populated with the data retrieved from the social network profile after a user
-has logged in with a social network account.
+has registered using a social network account.
 
 You can modify the `SocialLoginSubscriber.php` file in order to add your custom
 data processing.
