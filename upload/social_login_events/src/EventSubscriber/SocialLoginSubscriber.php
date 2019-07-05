@@ -14,7 +14,6 @@ use Drupal\social_login\Event\SocialLoginUserCreatedEvent;
  */
 class SocialLoginSubscriber implements EventSubscriberInterface
 {
-
     // The event names to listen for, and the methods that should be executed.
     public static function getSubscribedEvents()
     {
@@ -48,7 +47,7 @@ class SocialLoginSubscriber implements EventSubscriberInterface
             // Extract lastname.
             $last_name = (!empty($identity['name']['familyName']) ? trim($identity['name']['familyName']) : '');
 
-            // Update.
+            // Update fields.
             if ($account->hasField('field_first_name'))
             {
                 $account->set('field_first_name', $first_name);
@@ -64,6 +63,7 @@ class SocialLoginSubscriber implements EventSubscriberInterface
                 $account->set('field_full_name', trim($first_name . ' ' . $last_name));
             }
 
+            // Update account.
             $account->save();
         }
     }
