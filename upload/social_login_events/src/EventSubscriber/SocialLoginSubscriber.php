@@ -2,12 +2,10 @@
 
 namespace Drupal\social_login_events\EventSubscriber;
 
-use Drupal\Core\Config\ConfigCrudEvent;
-use Drupal\Core\Config\ConfigEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Drupal\user\Entity\User;
 use Drupal\social_login\Event\SocialLoginUserLoginEvent;
 use Drupal\social_login\Event\SocialLoginUserCreatedEvent;
+use Drupal\social_login\Event\SocialLoginUserLinkedEvent;
 
 /**
  * Reacts on SocialLogin events.
